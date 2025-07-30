@@ -1,10 +1,12 @@
 import mongoose from 'mongoose';
 import Passcode from '../models/passcode.model.js';
-
+import dotenv from 'dotenv';
+dotenv.config();
 const addTestPasscode = async () => {
   try {
     // Connect to MongoDB
-    await mongoose.connect('mongodb://localhost:27017/blogs', {
+    console.log('Mongo URI:', process.env.MONGO_URL);
+    await mongoose.connect('mongodb+srv://chabdullah:abdullah21@backend.tr2ys.mongodb.net/?retryWrites=true&w=majority&appName=backend', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
