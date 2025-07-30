@@ -31,7 +31,7 @@ router.post('/passcode', async (req, res) => {
     }
 
     console.log('[POST /passcode] Passcode verified successfully.');
-    const adminToken = process.env.ADMIN_TOKEN || 'admin_secret_token_2024';
+    const adminToken = process.env.ADMIN_TOKEN ;
     return res.status(200).json({ 
       success: true, 
       message: 'Passcode verified',
