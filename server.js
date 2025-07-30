@@ -16,11 +16,13 @@ import cors from 'cors';
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 connecttodb();
-app.use(cors({
-  origin: 'retrosmart.co.uk',
+const corsOptions = {
+  origin: 'https://www.retrosmart.co.uk',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 
 app.use('/api', blogroute);
 app.use('/api/verification', PasscodeRoute);
