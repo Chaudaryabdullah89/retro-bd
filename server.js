@@ -18,8 +18,10 @@ app.use(express.urlencoded({ extended: true }));
 connecttodb();
 const corsOptions = {
   origin: 'https://www.retrosmart.co.uk',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  credentials: true,
+  optionsSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));
