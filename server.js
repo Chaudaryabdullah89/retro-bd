@@ -16,15 +16,14 @@ import cors from 'cors';
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 connecttodb();
-const corsOptions = {
-  origin: 'https://www.retrosmart.co.uk',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-  credentials: true,
-  optionsSuccessStatus: 200
-};
 
-app.use(cors(corsOptions));
+// CORS configuration to accept requests from all origins
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  credentials: false
+}));
 
 app.use('/api', blogroute);
 app.use('/api/verification', PasscodeRoute);
