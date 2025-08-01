@@ -17,6 +17,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 connecttodb();
 
+
+app.get('/', (req, res) => {
+  res.send('Good Back from Retro-BD');
+});
+
 // CORS configuration to accept requests from all origins
 app.use(cors({
   origin: '*',
