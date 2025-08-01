@@ -19,13 +19,13 @@ connecttodb();
 
 
 // CORS configuration to accept requests from all origins
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
-  credentials: false,
-  optionsSuccessStatus: 200
-}));
+// app.use(cors({
+//   origin: '*',
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
+//   credentials: false,
+//   optionsSuccessStatus: 200
+// }));
 
 // Add CORS debugging middleware
 app.use((req, res, next) => {
